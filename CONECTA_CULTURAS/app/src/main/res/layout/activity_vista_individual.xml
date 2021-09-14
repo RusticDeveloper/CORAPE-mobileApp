@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".vistaIndividual">
+
+    <TextView
+        android:id="@+id/titulo"
+        android:layout_width="408dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Audio"
+        android:textColor="#DD1040"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nacion"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Cancel"
+        android:textColor="#007168"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titulo" />
+
+    <ImageView
+        android:id="@+id/Img_Saber"
+        android:layout_width="412dp"
+        android:layout_height="375dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/Audio"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcioin"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/descripcioin"
+        android:layout_width="414dp"
+        android:layout_height="145dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/Create"
+        android:textColor="#007168"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nacion" />
+
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="160dp"
+        android:onClick="Cancelar"
+        android:text="@string/back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Img_Saber" />
+
+    <VideoView
+        android:id="@+id/vid_Saber"
+        android:layout_width="412dp"
+        android:layout_height="375dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/descripcioin" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

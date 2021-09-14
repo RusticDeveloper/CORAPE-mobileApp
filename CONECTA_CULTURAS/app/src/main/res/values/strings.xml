@@ -1,0 +1,57 @@
+<resources>
+    <string name="TITULO">CONECTA CULTURAS</string>
+    <string name="REPOSITORIO">NUESTRO REPOSITORIO</string>
+    <string name="SUBIR_INFO">APORTA CON TUS SABERES</string>
+    <string name="LOGO_C">APORTA CON TUS SABERES</string>
+    <string name="CdD">APORTA CON TUS SABERES</string>
+    <string name="LOGO_SPOONSOR">APORTA CON TUS SABERES</string>
+    <string name="app_name">CONECTA CULTURAS</string>
+    <string name="Titulo">Titulo</string>
+    <string name="Descripcion">Descripción</string>
+    <string name="Public">Publicar</string>
+    <string name="P_si">Si</string>
+    <string name="P_no">No</string>
+    <string name="NoP">Nacionalidad o Pueblo</string>
+    <string name="TdA">Tipo de Archivo</string>
+    <string name="Cancel">Cancelar</string>
+    <string name="Create">Cargar Saber</string>
+    <string name="Search">Busca un saber especifico</string>
+    <string name="Audio">Audio</string>
+    <string name="Video">Video</string>
+    <string name="Imagen">Imagen</string>
+    <string name="Texto">Texto</string>
+    <string name="All">Todos</string>
+    <string name="Find">Buscar Saber</string>
+    <string name="Update">Actualizar</string>
+    <string name="Delete">Eliminar</string>
+    <string name="selecSaber">Seleccionar Saber</string>
+    <string name="temas">Tematicas:separelas con comas y sin espacios.</string>
+    <string name="back">Regresar</string>
+
+    <string-array name="NacionesPueblos">
+        <item>Nacionalidad Achuar</item>
+        <item>Nacionalidad Andoa</item>
+        <item>Nacionalidad Awa</item>
+        <item>Nacionalidad Chachi</item>
+        <item>Nacionalidad Cofán</item>
+        <item>Nacionalidad Éperara Siapidara</item>
+        <item>Nacionalidad Kichwa</item>
+        <item>Nacionalidad Sápara</item>
+        <item>Nacionalidad Sekoya</item>
+        <item>Nacionalidad Shiwiar</item>
+        <item>Nacionalidad Siona</item>
+        <item>Nacionalidad Tsáchila</item>
+        <item>Nacionalidad Waorani</item>
+        <item>Pueblo AFroecuatoriano</item>
+        <item>Pueblo Huancavilca</item>
+        <item>Pueblo Manta</item>
+        <item>Pueblo Montuvios</item>
+    </string-array>
+    <string-array name="tipos">
+        <item>Imagen</item>
+        <item>Video</item>
+        <item>Audio</item>
+        <item>Texto</item>
+    </string-array>
+</resources>
+

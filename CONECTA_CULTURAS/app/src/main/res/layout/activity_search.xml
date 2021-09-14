@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Search">
+
+    <ToggleButton
+        android:id="@+id/tb_All"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:checked="true"
+        android:text="@string/All"
+        app:layout_constraintEnd_toStartOf="@+id/tb_Aud"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <ToggleButton
+        android:id="@+id/tb_Vid"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Video"
+        app:layout_constraintEnd_toStartOf="@+id/tb_Img"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <ToggleButton
+        android:id="@+id/tb_Img"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Imagen"
+        app:layout_constraintEnd_toStartOf="@+id/tb_Txt"
+        app:layout_constraintTop_toBottomOf="@+id/textView12" />
+
+    <ToggleButton
+        android:id="@+id/tb_Txt"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/Texto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <Button
+        android:id="@+id/find"
+        android:layout_width="115dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:onClick="Buscar"
+        android:text="@string/Find"
+        app:layout_constraintEnd_toStartOf="@+id/et_busqueda"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_busqueda"
+        android:layout_width="302dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:gravity="center_horizontal"
+        android:hint="@string/Search"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ToggleButton
+        android:id="@+id/tb_Aud"
+        android:layout_width="56dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Audio"
+        app:layout_constraintEnd_toStartOf="@+id/tb_Vid"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="56dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/All"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView10"
+        app:layout_constraintTop_toBottomOf="@+id/et_busqueda" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="56dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Audio"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/et_busqueda" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="56dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Video"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/et_busqueda" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="56dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="24dp"
+        android:text="@string/Imagen"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/et_busqueda" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="56dp"
+        android:layout_height="29dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/Texto"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/et_busqueda" />
+
+    <ListView
+        android:id="@+id/lv_NP"
+        android:layout_width="412dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="8dp"
+        android:background="#009688"
+        android:cacheColorHint="#FF3D00"
+        android:listSelector="?attr/colorAccent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tb_Vid"></ListView>
+    <ListView
+        android:id="@+id/lv_Item"
+        android:layout_width="411dp"
+        android:layout_height="319dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lv_NP">
+
+    </ListView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

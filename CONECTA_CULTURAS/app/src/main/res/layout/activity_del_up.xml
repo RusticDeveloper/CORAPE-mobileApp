@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DelUp">
+
+    <Button
+        android:id="@+id/Delete"
+        android:layout_width="120dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/Delete"
+        app:layout_constraintEnd_toStartOf="@+id/yolo"
+        app:layout_constraintTop_toBottomOf="@+id/Img_Saber" />
+
+    <Button
+        android:id="@+id/Update"
+        android:layout_width="139dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="Actualizar"
+        android:text="@string/Update"
+        app:layout_constraintEnd_toStartOf="@+id/Delete"
+        app:layout_constraintTop_toBottomOf="@+id/Img_Saber" />
+
+    <Button
+        android:id="@+id/yolo"
+        android:layout_width="115dp"
+        android:layout_height="49dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="8dp"
+        android:onClick="Cancelar"
+        android:text="@string/Cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Img_Saber" />
+
+    <EditText
+        android:id="@+id/depiction2"
+        android:layout_width="406dp"
+        android:layout_height="98dp"
+        android:layout_marginTop="12dp"
+        android:ems="10"
+        android:gravity="start|top"
+        android:hint="@string/Descripcion"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+    <Spinner
+        android:id="@+id/sp_TdA2"
+        android:layout_width="match_parent"
+        android:layout_height="39dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/tipos"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="243dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="52dp"
+        android:gravity="center_horizontal|fill_horizontal|fill_vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <RadioButton
+            android:id="@+id/R_no"
+            android:layout_width="102dp"
+            android:layout_height="35dp"
+            android:text="@string/P_no" />
+
+        <RadioButton
+            android:id="@+id/R_yes"
+            android:layout_width="103dp"
+            android:layout_height="31dp"
+            android:gravity="fill_horizontal"
+            android:text="@string/P_si" />
+
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="328dp"
+        android:text="@string/Public"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/depiction2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="208dp"
+        android:text="@string/NoP"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="264dp"
+        android:text="@string/TdA"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_NoP2" />
+
+    <Spinner
+        android:id="@+id/sp_NoP2"
+        android:layout_width="match_parent"
+        android:layout_height="42dp"
+        android:layout_marginTop="8dp"
+        android:entries="@array/NacionesPueblos"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <EditText
+        android:id="@+id/title2"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:autofillHints=""
+        android:ems="10"
+        android:hint="@string/Titulo"
+        android:inputType="text"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/temas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="@string/temas"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sp_TdA2"
+        android:autofillHints="" />
+
+    <ImageView
+        android:id="@+id/Img_Saber"
+        android:layout_width="416dp"
+        android:layout_height="159dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/Audio"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/temas"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <VideoView
+        android:id="@+id/Vid_Saber"
+        android:layout_width="411dp"
+        android:layout_height="163dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="@+id/Img_Saber"
+        app:layout_constraintTop_toBottomOf="@+id/temas" />
+
+    <Button
+        android:id="@+id/button7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="108dp"
+        android:onClick="SeleccionarSaber"
+        android:text="@string/selecSaber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Img_Saber" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
