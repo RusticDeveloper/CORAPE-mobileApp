@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/navigation_add"
+        android:title="Aportar saber"
+        android:icon="@android:drawable/ic_menu_search"
+        />
+    <item
+        android:id="@+id/navigation_main"
+        android:title="Nuestros Saberes"
+        android:icon="?android:attr/fingerprintAuthDrawable"
+        />
+    <item
+        android:id="@+id/navigation_search"
+        android:title="Buscar saber"
+        android:icon="@android:drawable/ic_menu_add"
+        />
+
+</menu>

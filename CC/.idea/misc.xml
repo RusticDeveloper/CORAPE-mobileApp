@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/activity_aportar_saber.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/activity_buscar_saber.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/activity_editar_eliminar_saber.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/activity_listar_saberes.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/activity_main.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/activity_vista_individual.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/layout/list_item_nac_pue.xml" value="0.3375" />
+        <entry key="..\:/Users/DDRC/Desktop/CC/app/src/main/res/menu/navegacion_menu.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
