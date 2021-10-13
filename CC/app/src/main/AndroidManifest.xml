@@ -30,7 +30,7 @@
         <activity
             android:name=".editar_eliminar_saber"
             android:exported="true"
-            android:parentActivityName=".Listar_Saberes"/>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".Listar_Saberes"
             android:exported="true"
@@ -41,7 +41,7 @@
         <activity
             android:name=".Aportar_Saber"
             android:exported="true"
-            android:parentActivityName=".Listar_Saberes"/>
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -54,7 +54,7 @@
         /*configuracion del proveedor para tomar fotos y videos*/
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.newconectaculturas.android.fileprovider"
+            android:authorities="com.example.newconectaculturas.provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

@@ -3,10 +3,21 @@ package com.example.newconectaculturas;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.VideoView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.github.barteksc.pdfviewer.PDFView;
+
+import java.io.File;
 import java.util.List;
 
 import retrofit2.Call;
@@ -17,12 +28,15 @@ public class vista_Individual extends AppCompatActivity {
     /*Declaracion de variables y relacion con la vista*/
     List<singleResponse> userListResponseData;
     private String Ident;
+    private ImageView ImagenSaber;
+    private VideoView VideoSaber;
+    private PDFView pdfView;
 private TextView Titulo,Descripcion,Nacionalidad,Tematicas;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vista_individual);
-
+        pdfView=findViewById(R.id.textualKnow);
         //boton de regreso en la barra de titulo(a la activity padre)
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         /*instanciacion de varibles */
@@ -34,6 +48,9 @@ private TextView Titulo,Descripcion,Nacionalidad,Tematicas;
         Descripcion=(TextView) findViewById(R.id.DescSaber);
         Nacionalidad=(TextView) findViewById(R.id.NoP);
         Tematicas=(TextView) findViewById(R.id.Tematicas);
+        VideoSaber=(VideoView)findViewById(R.id.VidSaber);
+        ImagenSaber=(ImageView) findViewById(R.id.imagenSaber);
+
 
 /*LLena la activity con los datos obtenidos de los request*/
         LLenarCampos();
@@ -63,7 +80,7 @@ private TextView Titulo,Descripcion,Nacionalidad,Tematicas;
                 Descripcion.setText(Description);
                 Tematicas.setText(Themes);
                 Nacionalidad.setText(NP);
-
+                CargarSaber(Type,NombreSaber);
             }
             @Override
             public void onFailure(Call<List<singleResponse>> call, Throwable t) {
@@ -75,20 +92,63 @@ private TextView Titulo,Descripcion,Nacionalidad,Tematicas;
     }
     /*Cargar el saber dependiendo del tipo  que sea*/
     private void CargarSaber(String Tipo,String Nombre){
-        String Ruta="http://192.168.1.51/wordpress/wp-content/uploads/Saberes/Imagenes/"+Nombre;
+        String Ruta;
         switch (Tipo){
             case "Audio":
-                Toast.makeText(vista_Individual.this, "Entro Audio", Toast.LENGTH_SHORT).show();
+                Ruta="http://192.168.1.51/wordpress/wp-content/uploads/Saberes/Audios/"+Nombre;
+                CargarVidAud(Ruta);
+                VideoSaber.setVisibility(View.VISIBLE);
+                ImagenSaber.setVisibility(View.INVISIBLE);
+                pdfView.setVisibility(View.INVISIBLE);
                 break;
             case "Video":
-                Toast.makeText(vista_Individual.this, "Entro Video", Toast.LENGTH_SHORT).show();
+                Ruta="http://192.168.1.51/wordpress/wp-content/uploads/Saberes/Videos/"+Nombre;
+                CargarVidAud(Ruta);
+                VideoSaber.setVisibility(View.VISIBLE);
+                ImagenSaber.setVisibility(View.INVISIBLE);
+                pdfView.setVisibility(View.INVISIBLE);
                 break;
             case "Texto":
-                Toast.makeText(vista_Individual.this, "Entro Texto", Toast.LENGTH_SHORT).show();
+                Ruta="http://192.168.1.51/wordpress/wp-content/uploads/Saberes/Textos/"+Nombre;
+                File fS=new File(Environment.getExternalStorageDirectory()+"/Saberes/Textos/"+Nombre);
+                if(!fS.exists()){
+                    Toast.makeText(vista_Individual.this, "Entro por que el archivo no exite", Toast.LENGTH_SHORT).show();
+                    new DownloadPdf()
+                            .execute(Ruta,Nombre);
+                }
+                Uri fileRoute=Uri.fromFile(fS);
+                pdfView.fromUri(fileRoute)
+                        .load();
+                VideoSaber.setVisibility(View.INVISIBLE);
+                ImagenSaber.setVisibility(View.INVISIBLE);
+                pdfView.setVisibility(View.VISIBLE);
                 break;
             case "Imagen":
-                Toast.makeText(vista_Individual.this, "Entro Imagen", Toast.LENGTH_SHORT).show();
+                Ruta="http://192.168.1.51/wordpress/wp-content/uploads/Saberes/Imagenes/"+Nombre;
+                Glide.with(vista_Individual.this)
+                        .load(Ruta)
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .into(ImagenSaber);
+                VideoSaber.setVisibility(View.INVISIBLE);
+                ImagenSaber.setVisibility(View.VISIBLE);
+                pdfView.setVisibility(View.INVISIBLE);
                 break;
         }
+    }
+    private void CargarVidAud(String ruta) {
+        ProgressDialog pd = new ProgressDialog(vista_Individual.this);
+        pd.setMessage("CargandoVideo");
+        pd.show();
+        Uri uri = Uri.parse(ruta);
+        VideoSaber.setVideoURI(uri);
+        VideoSaber.start();
+        VideoSaber.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                if (pd != null) {
+                    pd.dismiss();
+                }
+            }
+        });
     }
 }

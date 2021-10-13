@@ -1,11 +1,12 @@
 <resources>
     <string name="app_name">CONECTA CULTURAS</string>
-<!-- textos para los titulos, botones y hints-->
+    <!-- textos para los titulos, botones y hints-->
     <string name="hint_busqueda">Busca aqui tu saber</string>
-    <string name="titulo_main">Nuestros saberes</string>
+    <string name="titulo_main">Pueblos y Nacionalidades</string>
+    <string name="titulo_tipos">Escoja el tipo de archivo del saber</string>
     <string name="desc_btn_ayuda">botton de ayuda</string>
     <string name="desc_btn_nuevo">boton para agregar un nuevo saber</string>
-<!-- textos apara las paginas de crear nuevo y actualizar y eliminar-->
+    <!-- textos apara las paginas de crear nuevo y actualizar y eliminar-->
     <string name="hint_titlulo">Nombre del saber</string>
     <string name="hint_descripcion">Descriva el saber</string>
     <string name="titulo_publicar">¿Publicar?</string>
@@ -19,7 +20,7 @@
     <string name="btn_create">Agregar</string>
     <string name="btn_select_saber">Escoger Saber</string>
 
-<!--  Valores  -->
+    <!--  Valores de los listviews  -->
     <string-array name="NacionesPueblos">
         <item>Nacionalidad Achuar</item>
         <item>Nacionalidad Andoa</item>
@@ -31,6 +32,7 @@
         <item>Nacionalidad Sápara</item>
         <item>Nacionalidad Sekoya</item>
         <item>Nacionalidad Shiwiar</item>
+        <item>Nacionalidad Shuar</item>
         <item>Nacionalidad Siona</item>
         <item>Nacionalidad Tsáchila</item>
         <item>Nacionalidad Waorani</item>
@@ -45,4 +47,6 @@
         <item>Audio</item>
         <item>Texto</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

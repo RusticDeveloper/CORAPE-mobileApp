@@ -35,14 +35,15 @@ public interface ApiInterface {
         // API's endpoints
     Call<List<singleResponse>> getSingleData(@Query("ID") String ident);
 
-    @GET("/Android/buscarID.php")
+    @GET("/Android/buscar.php")
         // API's endpoints
-    Call<List<singleResponse>> GetFile();
+    Call<List<StringResults>> getKnowledges(@Query("NacionPueblo") String NP,@Query("TipoArchivo") String TA);
 
     @FormUrlEncoded
     @POST("/Android/subirCampos.php")
         // API's endpoints
     Call<PostResponse> SendKnowData(
+            /*another way to set data to send*/
 //            @Field("Titulo") String T,
 //            @Field("Descripcion") String D,
 //            @Field("NacionalidadoPueblo") String NP,
@@ -50,19 +51,26 @@ public interface ApiInterface {
 //            @Field("Publicado") String Public,
 //            @Field("TagsTematicas") String Temat
             @FieldMap Map<String, String> map
-//            @Body Map<String, String> map
     );
+
 @Multipart
 @POST("/Android/subirArchivos.php")
         // API's endpoints
-    Call<PostResponse> SendFile(@Part MultipartBody.Part file,@Part("nombreSaber") RequestBody name,@Part("TipoArchivo") RequestBody type);
+    Call<PostResponse> SendFile(@Part MultipartBody.Part file,@Part("NombreSaber") RequestBody name,@Part("TipoArchivo") RequestBody type);
 
-@PUT("/Android/Update.php")
+@FormUrlEncoded
+@POST("/Android/Update.php")
         // API's endpoints
-    Call<List<PostResponse>> UpdateText();
+    Call<PostResponse> UpdateText(@FieldMap Map<String,String> mapa);
 
-@DELETE("/Android/Delete.php")
+@FormUrlEncoded
+@POST("/Android/subirArchivos.php")
         // API's endpoints
-    Call<List<PostResponse>> DeleteText();
+    Call<PostResponse> SendPdf(@Field("PDF") String pdf,@Field("NombreSaber") String nome,@Field("TipoArchivo") String TFile);
+
+
+@GET("/Android/Delete.php")
+        // API's endpoints
+    Call<PostResponse> DeleteText(@Query("ID") String identificacion);
 
 }

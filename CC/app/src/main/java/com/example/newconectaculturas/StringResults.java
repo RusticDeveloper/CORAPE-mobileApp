@@ -10,6 +10,8 @@ public class StringResults {
     private String NacionalidadoPueblo;
     private String TipoArchivo;
     private String ID;
+    private String mensaje;
+
     /*getters*/
     public String getID() {
         return ID;
@@ -27,6 +29,10 @@ public class StringResults {
         return TipoArchivo;
     }
 
+    public String getMensaje() {
+        return mensaje;
+    }
+
     /*setters*/
     public void setID(String ID) {
         this.ID = ID;
@@ -42,5 +48,9 @@ public class StringResults {
 
     public void setTipoArchivo(String tipoArchivo) {
         TipoArchivo = tipoArchivo;
+    }
+
+    public void setMensaje(String mensaje) {
+        this.mensaje = mensaje;
     }
 }

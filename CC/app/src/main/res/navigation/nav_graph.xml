@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/publosyNacionalidadesFragment">
+
+    <fragment
+        android:id="@+id/publosyNacionalidadesFragment"
+        android:name="com.example.newconectaculturas.PublosyNacionalidadesFragment"
+        android:label="fragment_publosy_nacionalidades"
+        tools:layout="@layout/fragment_publosy_nacionalidades" >
+        <action
+            android:id="@+id/action_publosyNacionalidadesFragment_to_tipoSaberFragment"
+            app:destination="@id/tipoSaberFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tipoSaberFragment"
+        android:name="com.example.newconectaculturas.TipoSaberFragment"
+        android:label="fragment_tipo_saber"
+        tools:layout="@layout/fragment_tipo_saber" >
+        <action
+            android:id="@+id/action_tipoSaberFragment_to_saberesFragment"
+            app:destination="@id/saberesFragment" />
+        <argument android:name="NacionPueblo"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/saberesFragment"
+        android:name="com.example.newconectaculturas.SaberesFragment"
+        android:label="fragment_saberes"
+        tools:layout="@layout/fragment_saberes" >
+        <argument
+            android:name="NacionPueblo"
+            app:argType="string" />
+        <argument
+            android:name="TipoSaber"
+            app:argType="string" />
+    </fragment>
+</navigation>

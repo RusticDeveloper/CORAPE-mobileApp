@@ -10,6 +10,7 @@ public class singleResponse {
     private String TagsTematicas;
     private String NombreSaber;
     private String RutaSaber;
+    private String ID;
 
 
     /*instanciacion de los getters*/
@@ -41,6 +42,14 @@ public class singleResponse {
     public String getTagsTematicas() {
         return TagsTematicas;
     }
+
+    public String getRutaSaber() {
+        return RutaSaber;
+    }
+
+    public String getID() {
+        return ID;
+    }
     /*instanciacion de los setters*/
 
     public void setTipoArchivo(String tipoArchivo) {
@@ -69,5 +78,13 @@ public class singleResponse {
 
     public void setTagsTematicas(String tagsTematicas) {
         TagsTematicas = tagsTematicas;
+    }
+
+    public void setRutaSaber(String rutaSaber) {
+        RutaSaber = rutaSaber;
+    }
+
+    public void setID(String ID) {
+        this.ID = ID;
     }
 }

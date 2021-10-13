@@ -53,6 +53,19 @@
         android:textSize="15sp"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="75dp" />
+    <TextView
+        android:id="@+id/DescSaber"
+        android:layout_width="393dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tituloSaber"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="12dp"
+        android:textColor="#9CABFF"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="115dp" />
 
     <ImageView
         android:id="@+id/imagenSaber"
@@ -73,23 +86,22 @@
         android:layout_below="@+id/Tematicas"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30sp"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.269"
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="333dp" />
 
-    <TextView
-        android:id="@+id/DescSaber"
-        android:layout_width="393dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/tituloSaber"
+    <com.github.barteksc.pdfviewer.PDFView
+        android:id="@+id/textualKnow"
+        android:layout_width="match_parent"
+        android:layout_height="431dp"
+        android:layout_below="@+id/Tematicas"
         android:layout_alignParentStart="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="12dp"
-        android:textColor="#9CABFF"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="115dp" />
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="72dp"
+        android:visibility="invisible" />
+
 
 </RelativeLayout>
