@@ -119,6 +119,7 @@ public class Listar_Saberes extends AppCompatActivity {
                 Intent Agregar=new Intent(Listar_Saberes.this, Aportar_Saber.class);
                 startActivity(Agregar);
                 overridePendingTransition(0, 0);
+                finish();
             }
         });
 
@@ -136,27 +137,28 @@ public class Listar_Saberes extends AppCompatActivity {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if (String.valueOf(s)==""||String.valueOf(s)==null){
+                if (String.valueOf(s).isEmpty()) {
+                    Llenar();
                     Toast.makeText(Listar_Saberes.this, "no hay ningun valor", Toast.LENGTH_SHORT).show();
-                }
-                for (String item:DatosFiltradosCC) {
+                } else {
+                    for (String item : DatosFiltradosCC) {
 //                    Log.i("intento",item);
 //                    Log.i("intentosh", String.valueOf(s));
-                    if (DatosFiltradosCC.contains(String.valueOf(s))){
-                        int indice=DatosFiltradosCC.indexOf(String.valueOf(s));
-                        ArrayList<String> SaberSeleccionado=new ArrayList<>();
-                        SaberSeleccionado.add(DatosCC.get(indice));
-                        String a=IDsCC.get(indice);
-                        IDsCC.clear();
-                        IDsCC.add(a);
-                        Toast.makeText(Listar_Saberes.this,"funciona", Toast.LENGTH_SHORT).show();
-                        //establece un adaptador para el listview y tambien añade peticiones a la cola de volley para el use de los web services
-                        ArrayAdapter<String> ListAdapter= new ArrayAdapter<String> (Listar_Saberes.this,R.layout.list_item_nac_pue,SaberSeleccionado);
-                        saberes.setAdapter(ListAdapter);
-                        break;
+                        if (DatosFiltradosCC.contains(String.valueOf(s))) {
+                            int indice = DatosFiltradosCC.indexOf(String.valueOf(s));
+                            ArrayList<String> SaberSeleccionado = new ArrayList<>();
+                            SaberSeleccionado.add(DatosCC.get(indice));
+                            String a = IDsCC.get(indice);
+                            IDsCC.clear();
+                            IDsCC.add(a);
+                            //establece un adaptador para el listview y tambien añade peticiones a la cola de volley para el use de los web services
+                            ArrayAdapter<String> ListAdapter = new ArrayAdapter<String>(Listar_Saberes.this, R.layout.list_item_nac_pue, SaberSeleccionado);
+                            saberes.setAdapter(ListAdapter);
+                            break;
+                        }
                     }
-                }
 //                Toast.makeText(Listar_Saberes.this, s, Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

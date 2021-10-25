@@ -121,6 +121,7 @@
         android:ems="10"
         android:gravity="start|top"
         android:hint="@string/hint_descripcion"
+        android:imeOptions="actionNext"
         android:inputType="textMultiLine"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tituloSaber" />
@@ -150,6 +151,7 @@
         android:layout_marginTop="8dp"
         android:ems="10"
         android:hint="@string/hint_tematicas"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"

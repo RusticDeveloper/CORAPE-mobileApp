@@ -19,6 +19,13 @@
     <string name="btn_delete">Eliminar</string>
     <string name="btn_create">Agregar</string>
     <string name="btn_select_saber">Escoger Saber</string>
+<!--    textos para la activity de de login-->
+    <string name="btn_login">Ingresar</string>
+    <string name="title_login">Inicio Sesion</string>
+    <string name="UserName">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="userName_hint">Ingrese su usuario</string>
+    <string name="password_hint">Ingrese su contraseña</string>
 
     <!--  Valores de los listviews  -->
     <string-array name="NacionesPueblos">
@@ -28,7 +35,7 @@
         <item>Nacionalidad Chachi</item>
         <item>Nacionalidad Cofán</item>
         <item>Nacionalidad Éperara Siapidara</item>
-        <item>Nacionalidad Kichwa</item>
+        <!--        <item>Nacionalidad Kichwa</item>-->
         <item>Nacionalidad Sápara</item>
         <item>Nacionalidad Sekoya</item>
         <item>Nacionalidad Shiwiar</item>
@@ -40,6 +47,22 @@
         <item>Pueblo Huancavilca</item>
         <item>Pueblo Manta</item>
         <item>Pueblo Montuvios</item>
+        <item>Pueblo Chibuleo</item>
+        <item>Pueblo Kañari</item>
+        <item>Pueblo Karanki</item>
+        <item>Pueblo Kayambi</item>
+        <item>Pueblo Kichwa Amazonía</item>
+        <item>Pueblo Kisapincha</item>
+        <item>Pueblo Natabuela</item>
+        <item>Pueblo Otavalo</item>
+        <item>Pueblo Palta</item>
+        <item>Pueblo Panzaleo</item>
+        <item>Pueblo Pasto</item>
+        <item>Pueblo Puruwá</item>
+        <item>Pueblo Salasaka</item>
+        <item>Pueblo Saraguro</item>
+        <item>Pueblo Tomabela</item>
+        <item>Pueblo Waranka</item>
     </string-array>
     <string-array name="tipos">
         <item>Imagen</item>

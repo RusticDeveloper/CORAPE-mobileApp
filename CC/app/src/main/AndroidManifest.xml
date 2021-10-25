@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.newconectaculturas">
-
-    <!-- permisos de lectura, escritura de archivos y  acceso a camara y microfono-->
+    <!-- permisos de lectura, escritura de archivos y  acceso a camara y microfono -->
     <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
@@ -10,10 +9,10 @@
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.RECORD_VIDEO" />
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-feature android:name="android.hardware.camera.any"
-        android:required="true"
-        />
 
+    <uses-feature
+        android:name="android.hardware.camera.any"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -21,37 +20,46 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:usesCleartextTraffic="true"
-        android:theme="@style/Theme.NewConectaCulturas">
+        android:theme="@style/Theme.NewConectaCulturas"
+        android:usesCleartextTraffic="true">
         <activity
-            android:name=".vista_Individual"
-            android:exported="true"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".editar_eliminar_saber"
-            android:exported="true"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".Listar_Saberes"
-            android:exported="true"
-            />
-        <activity
-            android:name=".Buscar_Saber"
-            android:exported="true" />
-        <activity
-            android:name=".Aportar_Saber"
-            android:exported="true"
-            android:parentActivityName=".MainActivity"/>
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".LoginActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        /*configuracion del proveedor para tomar fotos y videos*/
+        <activity
+            android:name=".SplashActivity"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".vista_Individual"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".editar_eliminar_saber"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Listar_Saberes"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Buscar_Saber"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Aportar_Saber"
+            android:exported="true"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
+
         <provider
             android:name="androidx.core.content.FileProvider"
             android:authorities="com.example.newconectaculturas.provider"
@@ -59,7 +67,7 @@
             android:grantUriPermissions="true">
             <meta-data
                 android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+                android:resource="@xml/file_paths" />
         </provider>
     </application>
 

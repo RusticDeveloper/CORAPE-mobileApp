@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_publosy_nacionalidades" >
         <action
             android:id="@+id/action_publosyNacionalidadesFragment_to_tipoSaberFragment"
-            app:destination="@id/tipoSaberFragment" />
+            app:destination="@id/tipoSaberFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
     </fragment>
     <fragment
         android:id="@+id/tipoSaberFragment"
@@ -21,7 +23,9 @@
         tools:layout="@layout/fragment_tipo_saber" >
         <action
             android:id="@+id/action_tipoSaberFragment_to_saberesFragment"
-            app:destination="@id/saberesFragment" />
+            app:destination="@id/saberesFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
         <argument android:name="NacionPueblo"
             app:argType="string" />
     </fragment>

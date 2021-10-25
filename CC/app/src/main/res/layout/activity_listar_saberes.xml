@@ -30,6 +30,7 @@
         android:autofillHints="true"
         android:ems="10"
         android:hint="@string/hint_busqueda"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
         android:minHeight="48dp" />
 

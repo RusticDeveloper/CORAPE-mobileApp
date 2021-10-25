@@ -39,6 +39,11 @@ public interface ApiInterface {
         // API's endpoints
     Call<List<StringResults>> getKnowledges(@Query("NacionPueblo") String NP,@Query("TipoArchivo") String TA);
 
+    /*para hacer el login*/
+    @GET("/Android/login.php")
+        // API's endpoints
+    Call<loginResponse> loginResponse(@Query("userName") String UN,@Query("password") String PSW);
+
     @FormUrlEncoded
     @POST("/Android/subirCampos.php")
         // API's endpoints

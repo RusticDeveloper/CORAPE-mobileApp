@@ -265,12 +265,24 @@ public class editar_eliminar_saber extends AppCompatActivity {
     }
 
     private void ActualizarSaber() throws URISyntaxException {
-        /*Actualiza el texto*/
-        ActualizarTextoSaber();
-        /*Actualiza el Archivo del saber*/
-        if (fileUpdated) {
-            ActualizarArchivoSaber();
+
+        if(
+                !Titulo.isDirty() &&
+                !Desc.isDirty() &&
+                !Tematica.isDirty() &&
+                (PSi.isChecked()||PNo.isChecked())
+        ){
+            /*Actualiza el texto*/
+            ActualizarTextoSaber();
+            /*Actualiza el Archivo del saber*/
+            if (fileUpdated) {
+                ActualizarArchivoSaber();
+            }
+            finish();
+        }else{
+            Toast.makeText(editar_eliminar_saber.this, "Llene todos los campos primero por favor", Toast.LENGTH_SHORT).show();
         }
+
     }
 
     private void ActualizarTextoSaber() {
@@ -381,6 +393,7 @@ public class editar_eliminar_saber extends AppCompatActivity {
             public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
                 String respuesta = response.body().getMensaje();
                 Toast.makeText(editar_eliminar_saber.this, respuesta, Toast.LENGTH_SHORT).show();
+                finish();
             }
 
             @Override

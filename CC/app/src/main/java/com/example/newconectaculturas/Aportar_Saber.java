@@ -103,16 +103,30 @@ public class Aportar_Saber extends AppCompatActivity {
         GuardarSaber.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                /*envia Texto al servidor para guardar en la base de datos*/
-                EnviarTexto();
-                /*envia saber al servidor para almacenarlo*/
-                try {
-                    EnviarArchivos();
-                } catch (URISyntaxException e) {
-                    e.printStackTrace();
+                String t=Titulo.getText().toString().trim();
+                String d=Descripcion.getText().toString().trim();
+                String tem=Tematicas.getText().toString().trim();
+                //validacion de campos vacios
+                if(
+                        !Titulo.isDirty() &&
+                        !Tematicas.isDirty() &&
+                        !Descripcion.isDirty() &&
+                        (RadioNo.isChecked() || RadioSi.isChecked())
+                ){
+                    /*envia Texto al servidor para guardar en la base de datos*/
+                    EnviarTexto();
+                    /*envia saber al servidor para almacenarlo*/
+                    try {
+                        EnviarArchivos();
+                    } catch (URISyntaxException e) {
+                        e.printStackTrace();
+                    }
+                    /*regresa al activity anterior*/
+                    finish();
+                }else{
+                    Toast.makeText(Aportar_Saber.this, "Llene todos los campos primero por favor", Toast.LENGTH_SHORT).show();
                 }
-                /*regresa al activity anterior*/
-                finish();
+
             }
         });
         GuardarSaber.setEnabled(false);
@@ -170,26 +184,26 @@ public class Aportar_Saber extends AppCompatActivity {
 
     private void EnviarArchivos() throws URISyntaxException {
         // display a progress dialog
-        final ProgressDialog progressDialog = new ProgressDialog(Aportar_Saber.this);
-        progressDialog.setCancelable(false); // set cancelable to false
-        progressDialog.setMessage("Enviando Saber"); // set message
-        progressDialog.show(); // show progress dialog
+        final ProgressDialog prgdig = new ProgressDialog(Aportar_Saber.this);
+        prgdig.setCancelable(false); // set cancelable to false
+        prgdig.setMessage("Enviando Saber"); // set message
+        prgdig.show(); // show progress dialog
         /*enviando saber al servidor*/
         String TA = SpinTA.getSelectedItem().toString();
         if (TA.equals("Texto")) {
             (Api.getClient().SendPdf(encodedPdf,nombreSaber,TA)).enqueue(new Callback<PostResponse>() {
                 @Override
                 public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
-                    if(progressDialog!=null){
-                        progressDialog.dismiss();
+                    if(prgdig!=null){
+                        prgdig.dismiss();
                     }
-                    Toast.makeText(Aportar_Saber.this, "Archivo Guardado con ecxito", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Aportar_Saber.this, response.body().getMensaje(), Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
                 public void onFailure(Call<PostResponse> call, Throwable t) {
-                    if(progressDialog!=null){
-                        progressDialog.dismiss();
+                    if(prgdig!=null){
+                        prgdig.dismiss();
                     }
                     Toast.makeText(Aportar_Saber.this, t.toString(), Toast.LENGTH_SHORT).show();
                     Log.i("error", t.toString());
@@ -212,15 +226,15 @@ public class Aportar_Saber extends AppCompatActivity {
             (Api.getClient().SendFile(fileToUpload, filename, filetype)).enqueue(new Callback<PostResponse>() {
                 @Override
                 public void onResponse(Call<PostResponse> call, Response<PostResponse> response) {
-                    if(progressDialog!=null){
-                        progressDialog.dismiss();
+                    if(prgdig!=null){
+                        prgdig.dismiss();
                     }
                     Toast.makeText(Aportar_Saber.this, response.body().getMensaje(), Toast.LENGTH_SHORT).show();
                 }
                 @Override
                 public void onFailure(Call<PostResponse> call, Throwable t) {
-                    if(progressDialog!=null){
-                        progressDialog.dismiss();
+                    if(prgdig!=null){
+                        prgdig.dismiss();
                     }
                     Log.i("error", t.toString());
                     Toast.makeText(Aportar_Saber.this, "Error" + t.toString(), Toast.LENGTH_SHORT).show();
